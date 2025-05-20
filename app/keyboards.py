@@ -33,7 +33,7 @@ async def events_list(tg_id):
     events = await db.get_user_events(tg_id)
     kb = InlineKeyboardBuilder()
     for event in events:
-        kb.add(InlineKeyboardButton(text=f"{event.name} - {event.date.strftime("%d.%m.%Y")}",
+        kb.add(InlineKeyboardButton(text=f"{event.name} - {event.date.strftime('%d.%m.%Y')}",
                                     callback_data=f"delete-event_{event.id}"))
     kb.add(InlineKeyboardButton(text='❌ Отмена', callback_data='cancel'))
     kb.adjust(1)
