@@ -31,7 +31,7 @@ async def show_events_list(callback: CallbackQuery):
     await callback.answer('Список событий')
     events = await db.get_user_events(callback.from_user.id)
     if events:
-        events_list = [f"{event.name} - {event.date.strftime("%d.%m.%Y")}" for event in events]
+        events_list = [f"{event.name} - {event.date.strftime('%d.%m.%Y')}" for event in events]
         events_message = '\n'.join(events_list)
     else:
         events_message = "У вас нет событий."
