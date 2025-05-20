@@ -77,8 +77,8 @@ async def add_event_date(message: Message, state: FSMContext):
     # устанавливаем нужное FSM состояние
     await state.set_state(st.AddEventState.sure)
     await message.answer(f'Вы уверены, что хотите добавить следующее событие?\n\n'
-                         f'<b>Название</b>: {tdata['name']}\n'
-                         f'<b>Дата</b>: {tdata['date'].strftime("%d.%m.%Y")}',
+                         f'<b>Название</b>: {tdata["name"]}\n'
+                         f'<b>Дата</b>: {tdata["date"].strftime("%d.%m.%Y")}',
                          reply_markup=kb.sure_kb)
 
 
